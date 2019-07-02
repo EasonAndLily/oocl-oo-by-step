@@ -1,5 +1,6 @@
 package collection;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -52,11 +53,21 @@ public class Add {
     
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
         return Stream.concat(arrayList.stream().filter(number -> number % 2 == 0).sorted(), arrayList.stream().filter(number -> number % 2 == 1).sorted((a, b) -> b - a)).collect(Collectors.toList());
-    
+        
         
     }
-
-//    public List<Integer> getProcessedList(List<Integer> arrayList) {
-//        return arrayList.stream().map(numnber -> numnber.)
-//    }
+    
+    public List<Integer> getProcessedList(List<Integer> arrayList) {
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            int firstNumber = arrayList.get(i);
+            if (i + 1 == arrayList.size()) {
+                break;
+            }
+            int nextNumber = arrayList.get(i + 1);
+            result.add((firstNumber + nextNumber) * 3);
+        }
+        
+        return result;
+    }
 }
