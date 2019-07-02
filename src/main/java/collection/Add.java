@@ -58,5 +58,5 @@ public class Add {
 
 //    public List<Integer> getProcessedList(List<Integer> arrayList) {
 //        return arrayList.stream().map(numnber -> numnber.)
-    }
+//    }
 }
